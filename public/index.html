@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy documents — Lago IT</title>
+  <meta name="description" content="Privacy policies and legal documents for Lago IT projects.">
+  <style>
+    /* Design tokens aligned with https://lago-it.com (see their :root in index-*.css) */
+    :root {
+      --breeze: 173, 50%, 35%;
+      --impulse: 38, 92%, 50%;
+      --cream: 36, 71%, 99%;
+      --pro: 215, 25%, 27%;
+      --concrete: 215, 19%, 35%;
+      --hero: 215, 25%, 19%;
+      --radius: 2rem;
+      --sidebar-width: 16.5rem;
+    }
+
+    /* Optional: drop font files into /fonts/ and enable @font-face here. */
+    /*
+    @font-face {
+      font-family: "YourFont";
+      src: url("fonts/your-font.woff2") format("woff2");
+      font-weight: 400;
+      font-display: swap;
+    }
+    */
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 1rem;
+      line-height: 1.6;
+      color: hsl(var(--cream));
+      background: hsl(var(--pro));
+    }
+
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      flex: 0 0 var(--sidebar-width);
+      background: hsl(var(--hero));
+      border-right: 1px solid hsl(var(--concrete) / 0.45);
+      padding: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      padding: 0 1.25rem 1.25rem;
+      border-bottom: 1px solid hsl(var(--concrete) / 0.35);
+      margin-bottom: 1rem;
+    }
+
+    .brand a {
+      color: hsl(var(--cream));
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand a:hover {
+      color: hsl(var(--breeze));
+    }
+
+    .brand-tag {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: hsl(var(--cream) / 0.65);
+    }
+
+    .tabs {
+      list-style: none;
+      margin: 0;
+      padding: 0 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .tabs button {
+      width: 100%;
+      text-align: left;
+      padding: 0.65rem 0.85rem;
+      border: none;
+      border-radius: calc(var(--radius) - 1rem);
+      background: transparent;
+      color: hsl(var(--cream) / 0.88);
+      font: inherit;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .tabs button:hover {
+      background: hsl(var(--breeze) / 0.12);
+      color: hsl(var(--cream));
+    }
+
+    .tabs button[aria-selected="true"] {
+      background: hsl(var(--breeze) / 0.22);
+      color: hsl(var(--cream));
+      box-shadow: inset 3px 0 0 hsl(var(--impulse));
+    }
+
+    .tabs button:focus-visible {
+      outline: 2px solid hsl(var(--breeze));
+      outline-offset: 2px;
+    }
+
+    .main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: hsl(var(--pro));
+    }
+
+    .panel {
+      display: none;
+      flex: 1;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .panel.is-active {
+      display: flex;
+    }
+
+    .panel-inner {
+      max-width: 42rem;
+      padding: 2rem 1.75rem 3rem;
+    }
+
+    .panel-inner.wide {
+      max-width: none;
+      padding: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+      line-height: 1.25;
+    }
+
+    .lead {
+      margin: 0 0 1.25rem;
+      color: hsl(var(--cream) / 0.82);
+      font-size: 1.05rem;
+    }
+
+    .panel-inner p {
+      margin: 0 0 1rem;
+      color: hsl(var(--cream) / 0.9);
+    }
+
+    .panel-inner a {
+      color: hsl(var(--breeze));
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .panel-inner a:hover {
+      color: hsl(var(--impulse));
+    }
+
+    .doc-frame {
+      flex: 1;
+      width: 100%;
+      border: 0;
+      background: hsl(36, 71%, 99%);
+      min-height: 70vh;
+    }
+
+    .site-footer {
+      margin-top: auto;
+      padding: 1rem 1.75rem;
+      border-top: 1px solid hsl(var(--concrete) / 0.35);
+      font-size: 0.875rem;
+      color: hsl(var(--cream) / 0.55);
+    }
+
+    .site-footer a {
+      color: hsl(var(--breeze));
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      .app {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        flex: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid hsl(var(--concrete) / 0.35);
+        padding: 1rem 0;
+      }
+
+      .tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+
+      .tabs button {
+        width: auto;
+        flex: 1 1 auto;
+        min-width: 8rem;
+        text-align: center;
+      }
+
+      .tabs button[aria-selected="true"] {
+        box-shadow: inset 0 -3px 0 hsl(var(--impulse));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Document navigation">
+      <div class="brand">
+        <a href="https://lago-it.com/">Lago IT</a>
+        <span class="brand-tag">Privacy documents</span>
+      </div>
+      <nav>
+        <ul class="tabs" role="tablist" aria-label="Policies">
+          <li role="none">
+            <button type="button" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="true" data-panel="panel-about">
+              About this site
+            </button>
+          </li>
+          <li role="none">
+            <button type="button" role="tab" id="tab-rewardu" aria-controls="panel-rewardu" aria-selected="false" data-panel="panel-rewardu">
+              RewardU
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <section id="panel-about" class="panel is-active" role="tabpanel" aria-labelledby="tab-about">
+        <div class="panel-inner">
+          <h1>Privacy document collection</h1>
+          <p class="lead">
+            This site hosts privacy policies and related legal documents for several private and business projects by Lago IT.
+          </p>
+          <p>
+            Each project has its own document. Use the tabs on the left to open the policy that applies to the app or service you are using. These pages are maintained for transparency and to meet app store and regulatory requirements.
+          </p>
+          <p>
+            For general questions about data protection, you can reach us at
+            <a href="mailto:datenschutz@lago-it.com">datenschutz@lago-it.com</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="panel-rewardu" class="panel" role="tabpanel" aria-labelledby="tab-rewardu" hidden>
+        <div class="panel-inner wide">
+          <iframe class="doc-frame" title="RewardU privacy policy" src="policy/rewardu"></iframe>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <a href="https://lago-it.com/">lago-it.com</a>
+        · Privacy document hub
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('[role="tab"][data-panel]');
+      var panels = {};
+
+      function showPanel(id) {
+        tabs.forEach(function (tab) {
+          var selected = tab.getAttribute("data-panel") === id;
+          tab.setAttribute("aria-selected", selected ? "true" : "false");
+        });
+        Object.keys(panels).forEach(function (key) {
+          var el = panels[key];
+          var on = key === id;
+          el.classList.toggle("is-active", on);
+          el.hidden = !on;
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        var id = tab.getAttribute("data-panel");
+        var panel = document.getElementById(id);
+        if (panel) panels[id] = panel;
+        tab.addEventListener("click", function () {
+          showPanel(id);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
