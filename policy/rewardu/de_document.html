@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutzerklärung — RewardU</title>
+  <meta name="description" content="Datenschutzerklärung für die RewardU iOS-App zur Gewohnheitsverfolgung.">
+  <link rel="alternate" hreflang="en" href="en_document.html">
+  <link rel="alternate" hreflang="de" href="de_document.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: rgba(0, 0, 0, 0.12);
+      --accent: #c4a51a;
+      --bg: #fafaf8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0ec;
+        --muted: #a8a8a0;
+        --border: rgba(255, 255, 255, 0.12);
+        --bg: #1c1c1a;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Anek Odia", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .lang-bar {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.75rem;
+    }
+    .lang-bar label {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .lang-bar select {
+      font: inherit;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 0.35rem;
+      background: var(--bg);
+      color: var(--text);
+      min-width: 12rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 2rem;
+    }
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      padding-top: 0.25rem;
+      border-top: 1px solid var(--border);
+    }
+    h2:first-of-type {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    p {
+      margin: 0 0 1rem;
+    }
+    ul {
+      margin: 0 0 1rem;
+      padding-left: 1.35rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+    }
+    strong {
+      font-weight: 600;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    footer {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-bar">
+      <label for="lang-select">Sprache</label>
+      <select id="lang-select" name="lang" aria-label="Sprache des Dokuments" onchange="if (this.value) location.href = this.value;">
+        <option value="en_document.html">English (en)</option>
+        <option value="de_document.html" selected>Deutsch (de)</option>
+      </select>
+    </div>
+
+    <h1>Datenschutzerklärung — RewardU</h1>
+    <p class="meta"><strong>Zuletzt aktualisiert:</strong> 1. April 2026</p>
+
+    <h2>Überblick</h2>
+    <p>RewardU ist eine iOS-App zur Gewohnheitsverfolgung und Belohnungsverwaltung. Der Schutz Ihrer Privatsphäre ist uns wichtig. Diese Erklärung beschreibt, wie RewardU mit Ihren Daten umgeht.</p>
+
+    <h2>Datenerhebung</h2>
+    <p><strong>RewardU erhebt, speichert oder überträgt keine personenbezogenen Daten an von uns betriebene externe Server.</strong> Alle Daten, die Sie in der App erfassen — einschließlich Gewohnheiten, protokollierter Einträge und Einstellungen — werden auf Ihrem Gerät gespeichert und bei aktivem iCloud-Login mit Ihrem privaten iCloud-Konto synchronisiert.</p>
+
+    <h2>Datenspeicherung und iCloud-Synchronisation</h2>
+    <ul>
+      <li>Alle Daten zu Gewohnheiten und Einträgen werden lokal auf Ihrem Gerät mit Apples SwiftData-Framework gespeichert.</li>
+      <li>Wenn Sie auf Ihrem Gerät bei iCloud angemeldet sind, werden Ihre Daten <strong>automatisch über Apples CloudKit</strong> in Ihre persönliche, private iCloud-Speicherung synchronisiert. So können Sie Ihre Gewohnheiten und Einträge auf allen Ihren Apple-Geräten nutzen.</li>
+      <li>Auch Ihre Einstellungen (z. B. Währungsauswahl) werden über iCloud synchronisiert.</li>
+      <li>iCloud-Daten werden von Apple bei der Übertragung und in Ruhe verschlüsselt. Wir haben <strong>keinen Zugriff</strong> auf Ihre iCloud-Daten.</li>
+      <li>Sie können die iCloud-Synchronisation für RewardU jederzeit in den Geräteeinstellungen unter Apple-ID &gt; iCloud &gt; Apps, die iCloud nutzen, deaktivieren.</li>
+      <li>Es werden keine Daten an Server übermittelt, die von uns oder Dritten betrieben werden.</li>
+    </ul>
+
+    <h2>Drittanbieter-Dienste</h2>
+    <p>RewardU bindet keine Analyse-, Werbe-, Tracking- oder Crash-Reporting-Dienste von Drittanbietern ein. Der einzige externe Dienst ist die optionale Datensynchronisation über Apples iCloud/CloudKit.</p>
+
+    <h2>Weitergabe von Daten</h2>
+    <p>RewardU gibt keine Daten an Dritte weiter. Ihre Daten verbleiben auf Ihrem Gerät und in Ihrem privaten iCloud-Konto (falls aktiviert). Wir haben keinen Zugriff darauf.</p>
+
+    <h2>Löschung von Daten</h2>
+    <p>Sie können Ihre Daten jederzeit löschen:</p>
+    <ul>
+      <li>Einzelne Einträge löschen Sie durch Wischen nach links in der App.</li>
+      <li>Ganze Gewohnheiten (einschließlich aller zugehörigen Einträge) löschen Sie durch Wischen nach links in der Gewohnheitenliste.</li>
+      <li>Löschungen werden über alle Ihre Geräte via iCloud synchronisiert.</li>
+      <li>Durch Deinstallation der App werden alle lokal gespeicherten Daten entfernt. Um Daten auch aus iCloud zu entfernen, deaktivieren Sie die iCloud-Synchronisation für RewardU vor der Deinstallation oder löschen die Daten unter Einstellungen &gt; Apple-ID &gt; iCloud &gt; Speicher verwalten.</li>
+    </ul>
+
+    <h2>Kinder</h2>
+    <p>RewardU erhebt wissentlich keine Daten von Kindern oder anderen Nutzern. Wir betreiben keine Server und haben keinen Zugriff auf Nutzerdaten.</p>
+
+    <h2>Änderungen dieser Erklärung</h2>
+    <p>Wenn wir diese Datenschutzerklärung aktualisieren, wird sie hier mit einem aktualisierten Datum veröffentlicht.</p>
+
+    <h2>Kontakt</h2>
+    <p>Bei Fragen zu dieser Datenschutzerklärung erreichen Sie uns unter:</p>
+    <p><strong><a href="mailto:datenschutz@lago-it.com">datenschutz@lago-it.com</a></strong></p>
+
+    <hr>
+
+    <footer>
+      <p>Diese Datenschutzerklärung gilt für die RewardU iOS-App.</p>
+    </footer>
+  </main>
+</body>
+</html>
