@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy documents — Lago IT</title>
-  <meta name="description" content="Privacy policies and legal documents for Lago IT projects.">
+  <title>App documents — Lago IT</title>
+  <meta name="description" content="Support- und Privacy-Dokumente fuer Lago IT Apps.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
   <style>
-    /* Design tokens aligned with https://lago-it.com (see their :root in index-*.css) */
     :root {
       --breeze: 173, 50%, 35%;
       --impulse: 38, 92%, 50%;
@@ -18,14 +17,11 @@
       --concrete: 215, 19%, 35%;
       --hero: 215, 25%, 19%;
       --radius: 2rem;
-      --sidebar-width: 16.5rem;
+      --sidebar-width: 18rem;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      -webkit-text-size-adjust: 100%;
-    }
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
@@ -33,29 +29,26 @@
       font-family: "Anek Odia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.55;
       color: hsl(var(--cream));
       background: hsl(var(--pro));
     }
 
-    .app {
-      display: flex;
-      min-height: 100vh;
-    }
+    .app { display: flex; min-height: 100vh; }
 
     .sidebar {
       flex: 0 0 var(--sidebar-width);
       background: hsl(var(--hero));
       border-right: 1px solid hsl(var(--concrete) / 0.45);
-      padding: 1.5rem 0;
+      padding: 1.25rem 0;
       display: flex;
       flex-direction: column;
     }
 
     .brand {
-      padding: 0 1.25rem 1.25rem;
+      padding: 0 1.25rem 1rem;
       border-bottom: 1px solid hsl(var(--concrete) / 0.35);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .brand a {
@@ -63,57 +56,61 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 1.05rem;
-      letter-spacing: -0.02em;
-    }
-
-    .brand a:hover {
-      color: hsl(var(--breeze));
     }
 
     .brand-tag {
       display: block;
-      margin-top: 0.35rem;
+      margin-top: 0.2rem;
       font-size: 0.8rem;
-      font-weight: 400;
       color: hsl(var(--cream) / 0.65);
     }
 
-    .tabs {
+    .nav-list {
       list-style: none;
       margin: 0;
       padding: 0 0.75rem;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.35rem;
     }
 
-    .tabs button {
+    .app-btn,
+    .section-btn {
       width: 100%;
-      text-align: left;
-      padding: 0.65rem 0.85rem;
       border: none;
-      border-radius: calc(var(--radius) - 1rem);
+      border-radius: calc(var(--radius) - 1.1rem);
       background: transparent;
-      color: hsl(var(--cream) / 0.88);
-      font: inherit;
+      color: hsl(var(--cream) / 0.9);
+      text-align: left;
       cursor: pointer;
-      transition: background-color 0.2s, color 0.2s;
+      font: inherit;
+      transition: background-color .2s, color .2s;
     }
 
-    .tabs button:hover {
-      background: hsl(var(--breeze) / 0.12);
-      color: hsl(var(--cream));
-    }
+    .app-btn { padding: 0.7rem 0.85rem; font-weight: 600; }
+    .section-btn { padding: 0.5rem 0.8rem 0.5rem 1.35rem; font-size: 0.95rem; }
 
-    .tabs button[aria-selected="true"] {
-      background: hsl(var(--breeze) / 0.22);
-      color: hsl(var(--cream));
+    .app-btn:hover,
+    .section-btn:hover { background: hsl(var(--breeze) / 0.14); color: hsl(var(--cream)); }
+
+    .app-item.is-open > .app-btn {
+      background: hsl(var(--breeze) / 0.2);
       box-shadow: inset 3px 0 0 hsl(var(--impulse));
     }
 
-    .tabs button:focus-visible {
-      outline: 2px solid hsl(var(--breeze));
-      outline-offset: 2px;
+    .subnav {
+      margin: 0.25rem 0 0.2rem;
+      padding: 0;
+      list-style: none;
+      display: none;
+      gap: 0.2rem;
+    }
+
+    .app-item.is-open .subnav { display: grid; }
+
+    .section-btn.is-active {
+      background: hsl(var(--breeze) / 0.24);
+      color: hsl(var(--cream));
     }
 
     .main {
@@ -124,196 +121,176 @@
       background: hsl(var(--pro));
     }
 
-    .panel {
-      display: none;
-      flex: 1;
-      flex-direction: column;
-      min-height: 0;
-    }
+    .panel { display: none; flex: 1; min-height: 0; }
+    .panel.is-active { display: flex; }
 
-    .panel.is-active {
-      display: flex;
-    }
+    .panel-inner { max-width: 46rem; padding: 2rem 1.75rem 2rem; }
+    .panel-inner p { color: hsl(var(--cream) / 0.9); margin: 0 0 1rem; }
+    .panel-inner a { color: hsl(var(--breeze)); }
 
-    .panel-inner {
-      max-width: 42rem;
-      padding: 2rem 1.75rem 3rem;
-    }
-
-    .panel-inner.wide {
-      max-width: none;
-      padding: 0;
+    .viewer {
       flex: 1;
       display: flex;
       flex-direction: column;
       min-height: 0;
+      width: 100%;
     }
 
-    h1 {
-      font-size: 1.65rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.75rem;
-      line-height: 1.25;
-    }
-
-    .lead {
-      margin: 0 0 1.25rem;
+    .viewer-head {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid hsl(var(--concrete) / 0.35);
       color: hsl(var(--cream) / 0.82);
-      font-size: 1.05rem;
-    }
-
-    .panel-inner p {
-      margin: 0 0 1rem;
-      color: hsl(var(--cream) / 0.9);
-    }
-
-    .panel-inner a {
-      color: hsl(var(--breeze));
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .panel-inner a:hover {
-      color: hsl(var(--impulse));
+      font-size: 0.92rem;
     }
 
     .doc-frame {
-      flex: 1;
       width: 100%;
+      flex: 1;
       border: 0;
       background: hsl(36, 71%, 99%);
       min-height: 70vh;
     }
 
     .site-footer {
-      margin-top: auto;
-      padding: 1rem 1.75rem;
+      padding: 0.9rem 1.5rem;
       border-top: 1px solid hsl(var(--concrete) / 0.35);
-      font-size: 0.875rem;
-      color: hsl(var(--cream) / 0.55);
+      color: hsl(var(--cream) / 0.58);
+      font-size: 0.86rem;
     }
 
-    .site-footer a {
-      color: hsl(var(--breeze));
-      text-decoration: none;
-    }
-
-    .site-footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 720px) {
-      .app {
-        flex-direction: column;
-      }
-
+    @media (max-width: 760px) {
+      .app { flex-direction: column; }
       .sidebar {
         flex: none;
         width: 100%;
         border-right: none;
         border-bottom: 1px solid hsl(var(--concrete) / 0.35);
-        padding: 1rem 0;
-      }
-
-      .tabs {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.35rem;
-      }
-
-      .tabs button {
-        width: auto;
-        flex: 1 1 auto;
-        min-width: 8rem;
-        text-align: center;
-      }
-
-      .tabs button[aria-selected="true"] {
-        box-shadow: inset 0 -3px 0 hsl(var(--impulse));
       }
     }
   </style>
 </head>
 <body>
   <div class="app">
-    <aside class="sidebar" aria-label="Document navigation">
+    <aside class="sidebar" aria-label="Navigation">
       <div class="brand">
         <a href="https://lago-it.com/">Lago IT</a>
-        <span class="brand-tag">Privacy documents</span>
+        <span class="brand-tag">Support &amp; Privacy documents</span>
       </div>
+
       <nav>
-        <ul class="tabs" role="tablist" aria-label="Policies">
-          <li role="none">
-            <button type="button" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="true" data-panel="panel-about">
-              About this site
-            </button>
-          </li>
-          <li role="none">
-            <button type="button" role="tab" id="tab-rewardu" aria-controls="panel-rewardu" aria-selected="false" data-panel="panel-rewardu">
-              RewardU
-            </button>
+        <ul class="nav-list">
+          <li class="app-item" data-app="rewardu">
+            <button class="app-btn" type="button" aria-expanded="true">RewardU</button>
+            <ul class="subnav">
+              <li><button class="section-btn" type="button" data-app="rewardu" data-section="support">Support</button></li>
+              <li><button class="section-btn" type="button" data-app="rewardu" data-section="privacy">Privacy</button></li>
+            </ul>
           </li>
         </ul>
       </nav>
     </aside>
 
-    <div class="main">
-      <section id="panel-about" class="panel is-active" role="tabpanel" aria-labelledby="tab-about">
+    <main class="main">
+      <section class="panel" id="about-panel">
         <div class="panel-inner">
-          <h1>Privacy document collection</h1>
-          <p class="lead">
-            This site hosts privacy policies and related legal documents for several private and business projects by Lago IT.
-          </p>
+          <h1>Dokumenten-Hub</h1>
+          <p>Waehle links eine App und dann den Bereich <strong>Support</strong> oder <strong>Privacy</strong>.</p>
+          <p>Direkte Links fuer GitHub Pages sind vorhanden:</p>
           <p>
-            Each project has its own document. Use the tabs on the left to open the policy that applies to the app or service you are using. These pages are maintained for transparency and to meet app store and regulatory requirements.
-          </p>
-          <p>
-            For general questions about data protection, you can reach us at
-            <a href="mailto:datenschutz@lago-it.com">datenschutz@lago-it.com</a>.
+            <a href="/rewardu/support/">/rewardu/support/</a><br>
+            <a href="/rewardu/privacy/">/rewardu/privacy/</a>
           </p>
         </div>
       </section>
 
-      <section id="panel-rewardu" class="panel" role="tabpanel" aria-labelledby="tab-rewardu" hidden>
-        <div class="panel-inner wide">
-          <iframe class="doc-frame" title="RewardU privacy policy" src="policy/rewardu/en_document.html"></iframe>
+      <section class="panel" id="doc-panel">
+        <div class="viewer">
+          <div class="viewer-head" id="viewer-head">RewardU — Support</div>
+          <iframe class="doc-frame" id="doc-frame" title="Document viewer" src="about:blank"></iframe>
         </div>
       </section>
 
-      <footer class="site-footer">
-        <a href="https://lago-it.com/">lago-it.com</a>
-        · Privacy document hub
-      </footer>
-    </div>
+      <footer class="site-footer">lago-it.com · App documentation hub</footer>
+    </main>
   </div>
 
   <script>
     (function () {
-      var tabs = document.querySelectorAll('[role="tab"][data-panel]');
-      var panels = {};
+      var docs = {
+        rewardu: {
+          support: "policy/rewardu/support/en_document.html",
+          privacy: "policy/rewardu/en_document.html"
+        }
+      };
 
-      function showPanel(id) {
-        tabs.forEach(function (tab) {
-          var selected = tab.getAttribute("data-panel") === id;
-          tab.setAttribute("aria-selected", selected ? "true" : "false");
-        });
-        Object.keys(panels).forEach(function (key) {
-          var el = panels[key];
-          var on = key === id;
-          el.classList.toggle("is-active", on);
-          el.hidden = !on;
+      var labels = {
+        rewardu: "RewardU",
+        support: "Support",
+        privacy: "Privacy"
+      };
+
+      var appItems = document.querySelectorAll(".app-item");
+      var appButtons = document.querySelectorAll(".app-btn");
+      var sectionButtons = document.querySelectorAll(".section-btn");
+      var aboutPanel = document.getElementById("about-panel");
+      var docPanel = document.getElementById("doc-panel");
+      var frame = document.getElementById("doc-frame");
+      var frameHead = document.getElementById("viewer-head");
+
+      function setOpenApp(app) {
+        appItems.forEach(function (item) {
+          var isOpen = item.getAttribute("data-app") === app;
+          item.classList.toggle("is-open", isOpen);
+          item.querySelector(".app-btn").setAttribute("aria-expanded", isOpen ? "true" : "false");
         });
       }
 
-      tabs.forEach(function (tab) {
-        var id = tab.getAttribute("data-panel");
-        var panel = document.getElementById(id);
-        if (panel) panels[id] = panel;
-        tab.addEventListener("click", function () {
-          showPanel(id);
+      function activateSection(app, section, updateUrl) {
+        if (!docs[app] || !docs[app][section]) return;
+
+        setOpenApp(app);
+
+        sectionButtons.forEach(function (btn) {
+          var on = btn.getAttribute("data-app") === app && btn.getAttribute("data-section") === section;
+          btn.classList.toggle("is-active", on);
+        });
+
+        aboutPanel.classList.remove("is-active");
+        docPanel.classList.add("is-active");
+        frame.src = docs[app][section];
+        frameHead.textContent = labels[app] + " — " + labels[section];
+
+        if (updateUrl) {
+          var url = new URL(window.location.href);
+          url.searchParams.set("app", app);
+          url.searchParams.set("section", section);
+          history.replaceState({}, "", url.pathname + url.search);
+        }
+      }
+
+      appButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var app = btn.closest(".app-item").getAttribute("data-app");
+          setOpenApp(app);
         });
       });
+
+      sectionButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activateSection(btn.getAttribute("data-app"), btn.getAttribute("data-section"), true);
+        });
+      });
+
+      var params = new URLSearchParams(window.location.search);
+      var app = params.get("app");
+      var section = params.get("section");
+
+      if (app && section && docs[app] && docs[app][section]) {
+        activateSection(app, section, false);
+      } else {
+        aboutPanel.classList.add("is-active");
+        setOpenApp("rewardu");
+      }
     })();
   </script>
 </body>

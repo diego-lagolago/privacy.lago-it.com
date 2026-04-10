@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — RewardU</title>
+  <meta name="description" content="Support-Ressourcen für die RewardU iOS-App.">
+  <link rel="alternate" hreflang="en" href="en_document.html">
+  <link rel="alternate" hreflang="de" href="de_document.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: rgba(0, 0, 0, 0.12);
+      --accent: #c4a51a;
+      --bg: #fafaf8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0ec;
+        --muted: #a8a8a0;
+        --border: rgba(255, 255, 255, 0.12);
+        --bg: #1c1c1a;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Anek Odia", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .lang-bar {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.75rem;
+    }
+    .lang-bar label { font-weight: 600; color: var(--muted); }
+    .lang-bar select {
+      font: inherit;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 0.35rem;
+      background: var(--bg);
+      color: var(--text);
+      min-width: 12rem;
+    }
+    h1 { margin: 0 0 0.5rem; line-height: 1.25; }
+    .meta { color: var(--muted); margin: 0 0 1.5rem; }
+    h2 { margin: 1.5rem 0 0.5rem; }
+    ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+    a { color: var(--accent); text-underline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-bar">
+      <label for="lang-select">Sprache</label>
+      <select id="lang-select" onchange="if (this.value) location.href = this.value;">
+        <option value="en_document.html">English (en)</option>
+        <option value="de_document.html" selected>Deutsch (de)</option>
+      </select>
+    </div>
+
+    <h1>Support — RewardU</h1>
+    <p class="meta">Hier finden Nutzer Hilfe und Kontaktmöglichkeiten für RewardU.</p>
+
+    <h2>Kontakt</h2>
+    <ul>
+      <li>Support E-Mail: <a href="mailto:support@lago-it.com">support@lago-it.com</a></li>
+      <li>Datenschutz: <a href="mailto:datenschutz@lago-it.com">datenschutz@lago-it.com</a></li>
+    </ul>
+
+    <h2>Hilfe-Ressourcen</h2>
+    <ul>
+      <li>FAQ: Hier Ihren FAQ-Link ergänzen</li>
+      <li>Bekannte Probleme: Hier Ihren Status-/Changelog-Link ergänzen</li>
+      <li>Feature-Wünsche: Hier Ihr Feedback-Formular ergänzen</li>
+    </ul>
+
+    <h2>Antwortzeiten</h2>
+    <p>Support-Anfragen werden in der Regel innerhalb von 1-2 Werktagen beantwortet.</p>
+  </main>
+</body>
+</html>
